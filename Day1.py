@@ -1,5 +1,6 @@
 import numpy as np
 
+password = 0
 angle = 50
 rotations = np.loadtxt('rotations.txt', dtype=str)
 
@@ -21,5 +22,7 @@ for line in rotations:
         angle -= 100
     elif angle < 0:
         angle += 100
+    if angle == 0:
+        password += 1
 
-print(angle)
+print(password)
