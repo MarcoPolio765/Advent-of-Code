@@ -18,11 +18,8 @@ for line in rotations:
     elif direction == "R":
         angle += amount
     
-    if angle > 99:
-        angle -= 100
-    elif angle < 0:
-        angle += 100
-    if angle == 0:
+    if angle % 100 ==0:
         password += 1
 
 print(password)
+
