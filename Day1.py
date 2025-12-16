@@ -1,0 +1,25 @@
+import numpy as np
+
+angle = 50
+rotations = np.loadtxt('rotations.txt', dtype=str)
+
+for line in rotations:
+    direction = ""
+    amount = ""
+    while i := 0 < len(line):
+        if line[i].isalpha():
+            direction += line[i]
+        elif line[i].isdigit():
+            amount += line[i]
+    amount = int(amount)
+    if direction == "L":
+        angle -= amount
+    elif direction == "R":
+        angle += amount
+    
+    if angle > 99:
+        angle -= 100
+    elif angle < 0:
+        angle += 100
+
+print(angle)
